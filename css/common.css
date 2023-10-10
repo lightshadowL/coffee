@@ -51,7 +51,7 @@ header a{
     display:inline-block;
     border:2px solid darkred;
     border-radius:5px;
-    width:100px;
+    width:80px;
     margin-left:5px;
     margin-right:5px;
 
@@ -88,8 +88,61 @@ p{
 .response{
     width:100%;
 }
+.h-box1{
+    width:100%;
+    overflow:hidden;
+}
 picture img{
     width:100%;
+    transition:0.5s;
+}
+.h-box1:hover img{
+    transform:scale(1.2);
+}
+.h-box2{
+    width:50%;
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.h-box2 img{
+    width:100%;
+    opacity:0.5;
+    transition:0.5s;
+}
+.h-box2:hover img{
+    opacity:1;
+}
+.h-doc1{
+    width:100%;
+    border:5px solid #666666;
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+.h-doc1 img{
+    width:100%;
+    transition:0.5s;
+}
+.h-doc1:hover img{
+    transform:scale(1.2);
+}
+.h-doc2{
+    width:30%;
+    border:5px solid red;
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.h-doc2 img{
+    width:100%;
+    opacity:0.8;
+    transition:0.5s;
+}
+.h-doc2:hover img{
+    opacity:1;
+    
 }
 
 /* ******************************************** */
@@ -105,14 +158,17 @@ picture img{
 }
 @media screen and (min-width:768px){
     /* 768px에서 부터 css */
+    html,body{
+        font-size:16px;
+    }
+    header{
+        height:100px;
+    }
 
 }
 
 @media screen and (min-width:1024px){
     /* 1024px에서 부터 css */
-    html,body{
-        font-size:16px;
-    }
     
 }
 @media screen and (min-width:1280px){
