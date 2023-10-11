@@ -144,7 +144,46 @@ picture img{
     opacity:1;
     
 }
+.title{
+    width:250px;
+}
+.thum-wrap{
+    width:98%;
+    margin:10px auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.thum{
+    width:45%;
+    border:1px solid black;
+    margin-top:20px;
+}
+.thum-img{
+    width:100%;
+}
+.thum-img img{
+    width:100%;
+}
+.thum p{
+    width:100%;
+    padding:10px;
+}
 
+.event-banner{
+    width:80%;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.event{
+    width:100%;
+    padding:10px;
+}
+.event img{
+    width:100%;
+}
 /* ******************************************** */
 
 /* footer */
@@ -163,6 +202,12 @@ picture img{
     }
     header{
         height:100px;
+    }
+    .thum{
+        width:22%;
+    }
+    .event{
+        width:35%;
     }
 
 }
