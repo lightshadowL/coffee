@@ -13,6 +13,7 @@
         <meta property="og:url" content="사이트 주소">
         <title>기본작성입니다.</title>
         <link rel="shortcut icon" href="./images/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./css/common.css">
         <script src="./js/jquery-3.6.0.min.js"></script>
         <style>
@@ -22,7 +23,21 @@
         <script>
             // Javascript, jQuery 작성 script 구역, 현재 페이지에만 적용됨
             $(document).ready(function(){
-                
+                $(".m-open").click(function(){
+                    $("nav").show()
+                }); 
+                $(".m-close").click(function(){
+                    $("nav").hide();
+                }) 
+                var winWidth=0;
+                $(window).resize(function(){
+                    winWidth=$(window).width();
+                    if(winWidth>=1024){
+                        $("nav").show();
+                    }else{
+                        $("nav").hide();
+                    }
+                })  
             });
         </script>
   </head>
@@ -39,8 +54,11 @@
                     <a href="login.html">로그인</a>
                     <a href="member.html">회원가입</a>
                 </div>
+                <button class="fa fa-bars m-open"></button>
             </div>
+            
             <nav>
+                <button class="m-close">X</button>
                 <div class="global-nav">
                     <a href="#">nav-1</a>
                     <a href="#">nav-2</a>
@@ -51,7 +69,10 @@
                     <a href="#">nav-7</a>
                     <a href="#">nav-8</a>
                 </div>
-                
+                <div class="m-login-group">
+                    <a href="login.html">로그인</a>
+                    <a href="member.html">회원가입</a>
+                </div>
             </nav>
         </header>
         <section class="section-container">

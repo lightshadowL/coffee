@@ -36,6 +36,7 @@ header, section, footer{
     max-width:1440px;
     margin:auto;
     border-bottom:1px dashed black;
+    position:relative;
 }
 
 
@@ -44,7 +45,7 @@ header, section, footer{
     width:100%;
     height:50px;
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items:center;
     padding:0 20px;
 }
@@ -60,31 +61,79 @@ h1 img{
     display:flex;
     align-items:flex-end;
     justify-content: space-around;
+    display:none;
+}
+.m-open{
+    width:30px;
+    height:30px;
+    font-size:1rem;
+    position:absolute;
+    right:15px;
+    top:15px;
+    border:1px solid black;
+    background-color:transparent;
+
 }
 nav{
-    width:98%;
-    height:30px;
-    margin:10px auto;
+    width:100%;
+    height:100%;
+    margin:0;
     overflow:auto;
     -ms-overflow-style:none ;
     scrollbar-width:none;
+    position:fixed;
+    right:0;
+    top:0;
+    background-color:rgba(0,0,0,0.5);
+    z-index:99999;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display:none;
 }
 nav::-webkit-scrollbar{
     display:none;
 }
+.m-close{
+    width:30px;
+    height:30px;
+    position:absolute;
+    right:10px;
+    top:20px;
+    z-index:10;
+}
 .global-nav{
-    width:180%;
+    position:absolute;
+    width:100%;
+    max-width:375px;
     height:100%;
+    background-color:white;
+    top:0;
+    right:0;
     display:flex;
-    justify-content: space-around;
-    align-items:center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
+    padding-top:50px;
+    
 }
 .global-nav a{
     width:70px;
     padding:2px 0 3px;
     text-align:center;
     border:1px solid red;
+    margin:10px;
 }
+.m-login-group{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    transform:translate(0,-20px)
+}
+.m-login-group a{
+    margin:0 10px;
+}
+
 
 
 
@@ -225,7 +274,7 @@ picture img{
         font-size:16px;
     }
     header{
-        height:100px;
+        height:auto;
     }
     .thum{
         width:22%;
@@ -249,7 +298,35 @@ picture img{
         background-color:black;
         color:white;
     }
-    
+
+    .login-group{
+        position:absolute;
+        right:60px;
+        display:flex;
+        align-items: center;
+        margin-top:5px;
+    }
+
+    nav{
+        position:static;
+        display:block;
+        background-color:transparent;
+    }
+    .m-close{
+        display:none;
+    }
+    .global-nav{
+        width:90%;
+        max-width:1280px;
+        position:static;
+        margin:auto;
+        padding:0;
+        flex-direction:row;
+        justify-content:space-around;
+    }
+    .m-login-group{
+        display:none;
+    }
 }
 @media screen and (min-width:1280px){
     /* 1280px에서 부터 css */
