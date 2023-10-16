@@ -23,19 +23,53 @@
         <script>
             // Javascript, jQuery 작성 script 구역, 현재 페이지에만 적용됨
             $(document).ready(function(){
-                $(".m-open").click(function(){
-                    $("nav").show()
+                /* $(".m-open").click(function(){
+                    $("nav").show().css({
+                        "display":"flex"
+                    });
+                    $("html,body").css({
+                        "overflow":"hidden"
+                    })
                 }); 
                 $(".m-close").click(function(){
                     $("nav").hide();
-                }) 
+                    $("html,body").css({
+                        "overflow":"auto"
+                    })
+                }) */ 
+                $(".m-open").click(function(){
+                    $("nav").addClass("active")
+                    $("html,body").css({
+                        "overflow":"hidden"
+                    })
+                }); 
+                $(".m-close").click(function(){
+                    $("nav").removeClass("active");
+                    $("html,body").css({
+                        "overflow":"auto"
+                    })
+                })
                 var winWidth=0;
+                winWidth=$(window).width();
+                if(winWidth>=1024){
+                    // $("nav").show();
+                    $("nav").addClass("active");
+                    $(".m-open").attr("disabled","disabled")
+                }else{
+                    // $("nav").hide();
+                    $("nav").removeClass("active")
+                    $(".m-open").removeAttr("disabled")
+                }
                 $(window).resize(function(){
                     winWidth=$(window).width();
                     if(winWidth>=1024){
-                        $("nav").show();
+                        // $("nav").show();
+                        $("nav").addClass("active");
+                        $(".m-open").attr("disabled","disabled")
                     }else{
-                        $("nav").hide();
+                        // $("nav").hide();
+                        $("nav").removeClass("active")
+                        $(".m-open").removeAttr("disabled","disabled")
                     }
                 })  
             });
